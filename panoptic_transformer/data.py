@@ -10,6 +10,15 @@ from torch.utils.data import Dataset, DataLoader
 from torch.utils.data import random_split
 from torchvision import transforms as T
 
+# helper functions
+
+def cycle(dl):
+    while True:
+        for el in dl:
+            yield el
+
+# pathfinder dataset
+
 class PathfinderXDataset(Dataset):
     def __init__(
         self,
@@ -49,3 +58,29 @@ class PathfinderXDataset(Dataset):
             img = F.pad(img, choice(rand_padding))
 
         return img.float(), label
+
+# get training and validation dataloader functions
+
+def get_dataloaders(
+    data_path,
+    *,
+    augment = True,
+    frac_valids = 0.05,
+    batch_size
+):
+    ds = PathfinderXDataset(data_path, augment = augment)
+
+    total_samples = len(ds)
+    frac_valids = 0.05
+
+    num_valid = int(frac_valids * total_samples)
+    num_train = total_samples - num_valid
+
+    print(f'training with {num_train} samples and validating with {num_valid} samples')
+
+    train_ds, valid_ds = random_split(ds, [num_train, num_valid])
+
+    train_dl = DataLoader(train_ds, batch_size = batch_size, shuffle = True)
+    valid_dl = DataLoader(valid_ds, batch_size = batch_size, shuffle = True)
+
+    return cycle(train_dl), cycle(valid_dl)

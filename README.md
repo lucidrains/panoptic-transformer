@@ -5,3 +5,9 @@ Another attempt at a long-context / efficient transformer by me. This approach w
 <img src="./images/pathx.png" width="400px">
 
 Update: on track to solving path-x with transformers
+
+## Training
+
+```bash
+$ git clone https://github.com/drewlinsley/pathfinder.git
+```
