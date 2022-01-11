@@ -75,7 +75,7 @@ args.contour_length = 14
 args.paddle_thickness = 1.5
 args.antialias_scale = 2
 args.continuity = 1.8  # from 1.8 to 0.8, with steps of 66%
-args.distractor_length = args.contour_length / 3
+args.distractor_length = args.contour_length // 3
 args.num_distractor_snakes = 35 / args.distractor_length
 args.snake_contrast_list = [0.9]
 
