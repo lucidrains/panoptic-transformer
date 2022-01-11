@@ -1,3 +1,6 @@
+# taken from https://github.com/drewlinsley/pathfinder/blob/master/snakes2_wrapper.py
+# but modified with path-x specific settings
+
 import time
 import sys
 import numpy as np
