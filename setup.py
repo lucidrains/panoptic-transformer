@@ -17,10 +17,7 @@ setup(
   ],
   install_requires=[
     'einops>=0.3',
-    'numpy',
-    'pillow',
-    'torch>=1.6',
-    'torchvision'
+    'torch>=1.6'
   ],
   classifiers=[
     'Development Status :: 4 - Beta',
