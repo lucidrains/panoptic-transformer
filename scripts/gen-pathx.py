@@ -6,7 +6,7 @@ import sys
 import numpy as np
 import os
 
-import pathfinder.snakes2
+import snakes2
 
 class Args:
     def __init__(self,

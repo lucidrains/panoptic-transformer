@@ -1,0 +1,1 @@
+from panoptic_transformer.panoptic_transformer import PanopticTransformer

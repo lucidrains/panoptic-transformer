@@ -11,3 +11,9 @@ Update: on track to solving path-x with transformers
 ```bash
 $ git clone https://github.com/drewlinsley/pathfinder.git
 ```
+
+Generate 25000 training samples (in paper they used 100k, you can change it to this number if you are willing to wait).
+
+```bash
+$ cp scripts/gen-pathx.py ./pathfinder && python pathfinder/gen-pathx.py 1 1 25000
+```
