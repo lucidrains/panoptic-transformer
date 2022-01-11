@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-  name = 'x-clip',
+  name = 'panoptic-transformer',
   packages = find_packages(exclude=[]),
   version = '0.0.1',
   license='MIT',
@@ -17,7 +17,10 @@ setup(
   ],
   install_requires=[
     'einops>=0.3',
-    'torch>=1.6'
+    'numpy',
+    'pillow',
+    'torch>=1.6',
+    'torchvision'
   ],
   classifiers=[
     'Development Status :: 4 - Beta',
