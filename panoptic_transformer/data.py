@@ -71,8 +71,6 @@ def get_dataloaders(
     ds = PathfinderXDataset(data_path, augment = augment)
 
     total_samples = len(ds)
-    frac_valids = 0.05
-
     num_valid = int(frac_valids * total_samples)
     num_train = total_samples - num_valid
 
